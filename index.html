@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SmartWorld AI — IA aplicada al negocio real</title>
+<meta name="description" content="SmartWorld AI diseña e implementa sistemas de IA a medida que tu organización controla, sin depender de terceros. Fundada por Rubens Temoche.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='38' fill='none' stroke='%2310223F' stroke-width='10'/%3E%3Cellipse cx='50' cy='50' rx='16' ry='38' fill='none' stroke='%2310223F' stroke-width='8'/%3E%3Ccircle cx='50' cy='50' r='13' fill='%23E39B1B'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#10223F;--navy-2:#18305A;--amber:#E39B1B;--amber-l:#F2B13A;--ink:#10223F;--muted:#4A5568;--bg:#FFFFFF;--soft:#F4F6F9;--line:#E3E7EE}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.95);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;font-size:20px;letter-spacing:-.4px}
+.ai{background:var(--amber);color:var(--navy);border-radius:6px;padding:2px 7px;font-size:14px}
+.links{display:flex;gap:28px;font-weight:600;font-size:15px}
+.links a{text-decoration:none;color:var(--muted)}.links a:hover{color:var(--navy)}
+.btn{display:inline-block;text-decoration:none;font-weight:700;border-radius:10px;padding:13px 22px;font-size:15px;transition:transform .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn-amber{background:var(--amber);color:var(--navy)}
+.btn-ghost{border:1.5px solid rgba(255,255,255,.5);color:#fff}
+.btn-navy{background:var(--navy);color:#fff}
+.hero{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.hero .wrap{padding-top:96px;padding-bottom:104px;position:relative}
+.hero svg.bg{position:absolute;right:-120px;top:-60px;width:620px;opacity:.1}
+.eyebrow{color:var(--amber-l);font-weight:700;letter-spacing:2px;text-transform:uppercase;font-size:13px}
+h1{font-size:clamp(36px,5.5vw,60px);line-height:1.08;letter-spacing:-1.5px;margin:16px 0 20px;max-width:760px;font-weight:800}
+.hero p{font-size:19px;max-width:620px;color:#D6DEEA;margin:0 0 32px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+section{padding:88px 0}
+h2{font-size:clamp(28px,3.6vw,40px);letter-spacing:-1px;line-height:1.15;margin:8px 0 16px;font-weight:800}
+.lead{color:var(--muted);font-size:18px;max-width:680px;margin:0 0 40px}
+.sec-eyebrow{color:#B8730A;font-weight:700;letter-spacing:2px;text-transform:uppercase;font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.card{border:1px solid var(--line);border-radius:16px;padding:28px;background:#fff;display:flex;flex-direction:column;gap:10px}
+.card h3{margin:0;font-size:21px;letter-spacing:-.3px}
+.card p{margin:0;color:var(--muted);font-size:15.5px;flex-grow:1}
+.tag{align-self:flex-start;font-size:12.5px;font-weight:700;border-radius:999px;padding:4px 12px;background:var(--soft);color:var(--navy)}
+.tag.live{background:#FCEFD6;color:#7A4A05}
+.soft{background:var(--soft)}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;counter-reset:s}
+.step{padding:24px;border-radius:16px;background:#fff;border:1px solid var(--line)}
+.step b{display:block;font-size:18px;margin-bottom:6px}
+.step::before{counter-increment:s;content:"0" counter(s);display:block;color:#B8730A;font-weight:800;font-size:14px;margin-bottom:10px}
+.step p{margin:0;color:var(--muted);font-size:15px}
+.founder{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:56px;align-items:center}
+.photo{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:24px;display:block;background:var(--navy)}
+.founder p{color:var(--muted);font-size:17px}
+.timeline{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 28px}
+.timeline span{font-size:13.5px;font-weight:600;border:1px solid var(--line);border-radius:999px;padding:6px 14px}
+.contact{background:var(--navy);color:#fff;border-radius:24px;padding:56px;display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap}
+.contact h2{color:#fff;margin:0 0 8px}
+.contact p{margin:0;color:#D6DEEA;font-size:17px;max-width:560px}
+footer{padding:40px 0;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media (max-width:760px){.links{display:none}.founder{grid-template-columns:1fr;gap:32px}.contact{padding:36px}section{padding:64px 0}.photo{max-width:320px}}
+</style>
+</head>
+<body>
+<header>
+<div class="wrap nav">
+<a class="brand" href="#inicio" aria-label="SmartWorld AI, inicio">
+<svg width="32" height="32" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="38" fill="none" stroke="#10223F" stroke-width="7"/><ellipse cx="50" cy="50" rx="16" ry="38" fill="none" stroke="#10223F" stroke-width="6"/><line x1="12" y1="50" x2="88" y2="50" stroke="#10223F" stroke-width="6"/><circle cx="50" cy="50" r="11" fill="#E39B1B"/></svg>
+SmartWorld <span class="ai">AI</span>
+</a>
+<nav class="links" aria-label="Principal">
+<a href="#servicios">Servicios</a>
+<a href="#soluciones">Productos</a>
+<a href="#enfoque">Enfoque</a>
+<a href="#fundador">Fundador</a>
+<a href="#contacto">Contacto</a>
+</nav>
+<a class="btn btn-navy" href="mailto:rubenstec@gmail.com?subject=Consulta%20SmartWorld%20AI">Conversemos</a>
+</div>
+</header>
+
+<main id="inicio">
+<section class="hero">
+<svg class="bg" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="38" fill="none" stroke="#fff" stroke-width="1.2"/><ellipse cx="50" cy="50" rx="16" ry="38" fill="none" stroke="#fff" stroke-width="1"/><ellipse cx="50" cy="50" rx="30" ry="38" fill="none" stroke="#fff" stroke-width=".6"/><line x1="12" y1="50" x2="88" y2="50" stroke="#fff" stroke-width="1"/><line x1="17" y1="32" x2="83" y2="32" stroke="#fff" stroke-width=".6"/><line x1="17" y1="68" x2="83" y2="68" stroke="#fff" stroke-width=".6"/><circle cx="50" cy="12" r="1.8" fill="#fff"/><circle cx="88" cy="50" r="1.8" fill="#fff"/><circle cx="12" cy="50" r="1.8" fill="#fff"/></svg>
+<div class="wrap">
+<div class="eyebrow">Corporaciones · Empresas · Gremios</div>
+<h1>Sistemas de IA a medida que tu empresa controla.</h1>
+<p>Diseñamos e implementamos inteligencia artificial que queda como activo de tu organización: auditable, alineada a resultados medibles y sin depender de terceros.</p>
+<div class="cta">
+<a class="btn btn-amber" href="#servicios">Ver servicios</a>
+<a class="btn btn-ghost" href="#contacto">Agendar una conversación</a>
+</div>
+</div>
+</section>
+
+<section id="servicios">
+<div class="wrap">
+<div class="sec-eyebrow">Servicios</div>
+<h2>Cómo podemos colaborar</h2>
+<p class="lead">La mayoría de soluciones de IA dejan a la empresa dependiendo de terceros. Nosotros construimos sistemas que tu organización posee y controla.</p>
+<div class="grid">
+<article class="card">
+<h3>Smart Blueprints On-Demand</h3>
+<p>Soluciones de IA a medida para problemas operativos concretos: automatización, análisis y atención al cliente.</p>
+</article>
+<article class="card">
+<h3>Arquitectura de Ecosistemas</h3>
+<p>Construcción de tu propia infraestructura de IA, integrada a tus sistemas y sin depender de proveedores externos.</p>
+</article>
+<article class="card">
+<h3>Diagnóstico de Inmunidad Digital</h3>
+<p>Evaluación de riesgos de fuga de conocimiento y propiedad intelectual, presentada a la alta dirección.</p>
+</article>
+</div>
+</div>
+</section>
+
+<section id="soluciones" class="soft">
+<div class="wrap">
+<div class="sec-eyebrow">Ya en marcha</div>
+<h2>Productos que ya construimos</h2>
+<p class="lead">La prueba de nuestro método: herramientas reales, hoy en validación con brokers de seguros y agentes inmobiliarios.</p>
+<div class="grid">
+<article class="card">
+<span class="tag live">Disponible</span>
+<h3>ValoraPro</h3>
+<p>Valorización de inmuebles para agentes inmobiliarios. Ayuda a captar más autorizaciones de venta con un informe profesional.</p>
+<a class="btn btn-navy" href="mailto:rubenstec@gmail.com?subject=Quiero%20probar%20ValoraPro">Solicitar acceso</a>
+</article>
+<article class="card">
+<span class="tag live">Disponible</span>
+<h3>ValoraGratis</h3>
+<p>Una primera valorización gratuita del inmueble, como puerta de entrada para propietarios.</p>
+<a class="btn btn-navy" href="mailto:rubenstec@gmail.com?subject=Consulta%20ValoraGratis">Consultar</a>
+</article>
+<article class="card">
+<span class="tag">En desarrollo</span>
+<h3>Smart Policy Audit</h3>
+<p>Auditoría y comparación de pólizas y condicionados de seguros, para brokers que asesoran con rigor.</p>
+<a class="btn btn-navy" href="mailto:rubenstec@gmail.com?subject=Inter%C3%A9s%20en%20Smart%20Policy%20Audit">Quiero ser piloto</a>
+</article>
+<article class="card">
+<span class="tag">Próximamente</span>
+<h3>Smart Enterprise AI</h3>
+<p>Índice anual de madurez en inteligencia artificial de las empresas peruanas.</p>
+<a class="btn btn-navy" href="mailto:rubenstec@gmail.com?subject=Inter%C3%A9s%20en%20Smart%20Enterprise%20AI">Recibir novedades</a>
+</article>
+</div>
+</div>
+</section>
+
+<section id="enfoque">
+<div class="wrap">
+<div class="sec-eyebrow">Enfoque</div>
+<h2>Empieza pequeño, mide y escala</h2>
+<p class="lead">Trabajamos de cerca con brokers de seguros y agentes inmobiliarios para validar cada solución antes de escalarla.</p>
+<div class="steps">
+<div class="step"><b>Entender el problema</b><p>Conversamos con quienes viven el proceso todos los días.</p></div>
+<div class="step"><b>Construir lo mínimo útil</b><p>Una herramienta simple que resuelva el dolor principal.</p></div>
+<div class="step"><b>Validar con usuarios</b><p>Pilotos con gremios y profesionales del sector.</p></div>
+<div class="step"><b>Escalar</b><p>Llevar lo que funciona a empresas, corporaciones e instituciones.</p></div>
+</div>
+</div>
+</section>
+
+<section id="fundador">
+<div class="wrap founder">
+<img class="photo" src="rubens-temoche.jpg" alt="Rubens Temoche, fundador de SmartWorld AI" width="800" height="800">
+<div>
+<div class="sec-eyebrow">Fundador</div>
+<h2>Rubens Temoche</h2>
+<p><strong>Arquitecto de Ecosistemas de IA y fundador de SmartWorld AI.</strong> Ha visto la tecnología desde adentro: como Jefe de Sistemas en retail y en telecomunicaciones, seguros y educación. Por eso diseña soluciones de IA que parten del problema del negocio y no de la moda tecnológica.</p>
+<div class="timeline">
+<span>Retail · Jefe de Sistemas</span>
+<span>Telefónica · Claro</span>
+<span>Pacífico Vida · Interseguro · SURA</span>
+<span>Odoo</span>
+</div>
+<p>Cada semana comparte ideas sobre IA aplicada en su newsletter <strong>SmartWorld Insights</strong>.</p>
+<a class="btn btn-navy" href="https://www.linkedin.com/in/rubenstemoche/" target="_blank" rel="noopener">Seguir en LinkedIn</a>
+</div>
+</div>
+</section>
+
+<section id="contacto">
+<div class="wrap">
+<div class="contact">
+<div>
+<h2>¿Conversamos?</h2>
+<p>Si tu organización está lista para dejar de alquilar inteligencia y empezar a poseerla, escríbeme.</p>
+</div>
+<a class="btn btn-amber" href="mailto:rubenstec@gmail.com?subject=Consulta%20SmartWorld%20AI">rubenstec@gmail.com</a>
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="wrap">
+<span>© 2026 SmartWorld AI · Lima, Perú</span>
+<span><a href="https://www.linkedin.com/in/rubenstemoche/" target="_blank" rel="noopener">LinkedIn</a></span>
+</div>
+</footer>
+</body>
+</html>
