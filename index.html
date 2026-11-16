@@ -34,7 +34,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.95);backdro
 .ai{background:var(--amber);color:var(--navy);border-radius:6px;padding:2px 7px;font-size:14px}
 .links{display:flex;gap:28px;font-weight:600;font-size:15px}
 .links a{text-decoration:none;color:var(--muted)}.links a:hover{color:var(--navy)}
-.btn{display:inline-block;text-decoration:none;font-weight:700;border-radius:10px;padding:13px 22px;font-size:15px;transition:transform .15s}
+.btn{display:inline-block;white-space:nowrap;text-decoration:none;font-weight:700;border-radius:10px;padding:13px 22px;font-size:15px;transition:transform .15s}
 .btn:hover{transform:translateY(-1px)}
 .btn-amber{background:var(--amber);color:var(--navy)}
 .btn-ghost{border:1.5px solid rgba(255,255,255,.5);color:#fff}
@@ -51,7 +51,7 @@ h2{font-size:clamp(28px,3.6vw,40px);letter-spacing:-1px;line-height:1.15;margin:
 .lead{color:var(--muted);font-size:18px;max-width:680px;margin:0 0 40px}
 .sec-eyebrow{color:#B8730A;font-weight:700;letter-spacing:2px;text-transform:uppercase;font-size:13px}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
-.grid.products{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.grid.products{grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr))}
 .card{border:1px solid var(--line);border-radius:16px;padding:28px;background:#fff;display:flex;flex-direction:column;gap:10px}
 .card h3{margin:0;font-size:21px;letter-spacing:-.3px}
 .card p{margin:0;color:var(--muted);font-size:15.5px;flex-grow:1}
@@ -63,7 +63,8 @@ h2{font-size:clamp(28px,3.6vw,40px);letter-spacing:-1px;line-height:1.15;margin:
 .step b{display:block;font-size:18px;margin-bottom:6px}
 .step::before{counter-increment:s;content:"0" counter(s);display:block;color:#B8730A;font-weight:800;font-size:14px;margin-bottom:10px}
 .step p{margin:0;color:var(--muted);font-size:15px}
-.founder{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:56px;align-items:center}
+.founder{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:56px;align-items:start}
+.founder .photo{position:sticky;top:104px}
 .photo{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:24px;display:block;background:var(--navy)}
 .founder p{color:var(--muted);font-size:17px}
 .timeline{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 28px}
@@ -80,7 +81,10 @@ h2{font-size:clamp(28px,3.6vw,40px);letter-spacing:-1px;line-height:1.15;margin:
 .contact p{margin:0;color:#D6DEEA;font-size:17px;max-width:560px}
 footer{padding:40px 0;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-@media (max-width:760px){.links{display:none}.founder{grid-template-columns:1fr;gap:32px}.contact{padding:36px}section{padding:64px 0}.photo{max-width:320px}}
+@media (max-width:960px){.links{display:none}}
+@media (max-width:350px){.nav .btn{display:none}}
+@media (max-width:420px){.nav .btn{padding:10px 14px;font-size:14px}.brand{font-size:18px}}
+@media (max-width:760px){.founder .photo{position:static}.links{display:none}.founder{grid-template-columns:1fr;gap:32px}.contact{padding:36px}section{padding:64px 0}.photo{max-width:320px}}
 </style>
 </head>
 <body>
